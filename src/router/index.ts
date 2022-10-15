@@ -1,3 +1,11 @@
 import { RouteRecordRaw } from 'vue-router'
 
-export const routes: RouteRecordRaw[] = []
+import routersHome from './routersHome'
+import routersAuth from './routersAuth'
+import routersProfile from './routersProfile'
+
+export const routes: RouteRecordRaw[] = [
+    ...routersHome,
+    ...routersAuth,
+    ...routersProfile,
+]
