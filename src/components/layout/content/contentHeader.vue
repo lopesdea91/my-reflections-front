@@ -1,5 +1,10 @@
 <script setup lang="ts">
-defineProps({
+import { actions } from "../navbar/state";
+const { btnMenu, btnBack, title } = defineProps({
+  btnMenu: {
+    type: Boolean,
+    default: false,
+  },
   btnBack: {
     type: Boolean,
     default: false,
@@ -9,13 +14,23 @@ defineProps({
     default: "",
   },
 });
+const hasActions = !!title && (!!btnMenu || !!btnBack);
 </script>
 
 <template>
   <div class="page-header">
-    <button v-show="btnBack" class="icon-base">
+    <button 
+      class="icon-base page-header-only-mobile"
+      @click="actions.toggleStatusMenu"
+    >
+      <Icon icon="fa-solid fa-bars" />
+    </button>
+    <span class="page-header-divisor page-header-only-mobile"></span>
+    <button v-if="btnBack" class="icon-base">
       <Icon icon="fa-solid fa-arrow-left" />
     </button>
-    <h3 v-show="title">{{ title }}</h3>
+    <span v-if="hasActions" class="page-header-divisor"></span>
+    <h3 v-if="title">{{ title }}</h3>
   </div>
 </template>
+
