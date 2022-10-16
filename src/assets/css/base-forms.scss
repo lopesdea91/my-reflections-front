@@ -1,0 +1,7 @@
+.textarea {
+    @apply bg-transparent border-stone-700 border w-full h-12 outline-none p-1 text-sm text-stone-400 placeholder-stone-500;
+
+    &:focus {
+        @apply border-stone-500 bg-stone-800;
+    }
+}

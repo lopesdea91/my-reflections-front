@@ -1,0 +1,37 @@
+#app {
+    @apply h-screen min-w-full w-64 bg-stone-900 text-white;
+
+    @media (min-width: 480px) {
+        @apply grid;
+        grid-template-columns: 1fr 380px 1fr;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 460px 1fr;
+    }
+}
+
+//  GERAL
+.icon-base {
+    @apply w-8 h-8 flex items-center justify-center;
+
+    @media (max-width: 479px) {
+        @apply h-10;
+    }
+
+    @media (min-width: 1024px) {
+        @apply w-6;
+    }
+}
+
+.btn-base {
+    @apply w-16 h-6 flex items-center justify-center text-sm bg-stone-700 rounded-sm border-stone-500 border-b;
+
+    &:focus {
+        @apply shadow-stone-500 shadow-sm;
+    }
+
+    @media (min-width: 480px) {
+        @apply h-7;
+    }
+}
