@@ -1,0 +1,10 @@
+#app {
+    @apply h-screen min-w-full w-64 bg-stone-900 text-white sm:grid sm:gap-1 relative;
+
+    @media (min-width: 480px) {
+        grid-template-columns: 1fr 380px 1fr;
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 460px 1fr;
+    }
+}
