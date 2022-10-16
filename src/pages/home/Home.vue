@@ -1,25 +1,11 @@
 <script setup lang="ts">
+import ContentHeader from "../../components/layout/content/contentHeader.vue";
 </script>
 
 <template>
-  <div class="content">
-    <h1>Home</h1>
+  <div class="page-content">
+    <ContentHeader title="Página inicial" />
+    <h1 class="teste">Home</h1>
   </div>
-  <div class="aside">aside</div>
+  <div class="page-aside">aside</div>
 </template>
-
-<style lang="scss">
-.content {
-  @apply text-center;
-}
-.aside {
-  @apply text-center;
-  @apply hidden lg:flex flex-col items-center justify-self-start;
-  @media (min-width: 1024px) {
-    @apply w-44;
-  }
-  @media (min-width: 1280px) {
-    @apply w-52;
-  }
-}
-</style>
