@@ -143,7 +143,11 @@
 
 .page {
     &-content {
-        @apply mt-2 mx-2 px-2 border-x border-stone-700 overflow-y-auto;
+        @apply mx-2 pt-2 px-2 border-x border-stone-700 overflow-y-auto;
+
+        @media (max-width: 479px) {
+            @apply h-screen;
+        }
     }
 
     &-header {
