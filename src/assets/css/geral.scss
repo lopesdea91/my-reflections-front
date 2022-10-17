@@ -30,8 +30,4 @@
     &:focus {
         @apply shadow-stone-500 shadow-sm;
     }
-
-    @media (min-width: 480px) {
-        @apply h-7;
-    }
 }
