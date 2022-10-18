@@ -31,6 +31,6 @@ function onSubmit() {
 
 <style lang="scss" scoped>
 .contentCreatePost {
-  @apply flex flex-col items-end gap-1 p-1 mb-2 border-stone-700 border-y;
+  @apply flex flex-col items-end gap-1 p-1 mb-2 -mx-2  border-stone-700 border-y;
 }
 </style>

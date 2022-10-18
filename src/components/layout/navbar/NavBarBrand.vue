@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { actions } from "./state";
 
 const debounce = ref();
@@ -11,7 +11,13 @@ function handleResize(e: any) {
   }, 50);
 }
 
-window.addEventListener("resize", handleResize);
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
 </script>
 
 <template>
