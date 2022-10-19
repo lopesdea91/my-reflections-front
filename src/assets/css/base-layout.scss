@@ -1,3 +1,13 @@
+@keyframes animate-show-content {
+    from {
+        @apply opacity-0 -mt-1
+    }
+
+    to {
+        @apply opacity-100
+    }
+}
+
 // LAYOUT
 .navbar {
     @apply flex flex-col overflow-hidden text-stone-200 z-20;
@@ -98,7 +108,11 @@
 }
 
 .navbar-list-item {
-    @apply flex items-center cursor-pointer;
+    @apply flex items-center cursor-pointer text-stone-200;
+
+    &:hover {
+        @apply bg-stone-800 duration-150;
+    }
 
     .icon {
         @extend .icon-base;
@@ -137,6 +151,7 @@
 
     &-content {
         @apply relative px-2 pt-2 border-x border-stone-700 overflow-y-auto;
+        animation: animate-show-content 0.5s forwards;
 
         @media (max-width: 479px) {
             @apply mx-1 h-screen;
