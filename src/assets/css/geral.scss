@@ -3,11 +3,7 @@
 
     @media (min-width: 480px) {
         @apply grid;
-        grid-template-columns: 1fr 380px 1fr;
-    }
-
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr 460px 1fr;
+        grid-template-columns: 1fr minmax(min-content, 600px) 1fr;
     }
 }
 

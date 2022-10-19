@@ -19,7 +19,6 @@ const { link } = defineProps({
     <div class="column-content">
       <div class="header">
         <span class="owner">name</span>
-        <span class="created">22/05/2022</span>
       </div>
 
       <span class="divisor"></span>
@@ -34,18 +33,21 @@ const { link } = defineProps({
       </p>
 
       <div class="footer">
-        <button class="btn like">
-          <span>12</span>
-          <div>
-            <Icon icon="fa-solid fa-thumbs-up" />
-          </div>
-        </button>
-        <button class="btn dislike">
-          <span>12</span>
-          <div>
-            <Icon icon="fa-solid fa-thumbs-down" />
-          </div>
-        </button>
+        <span class="created">22/05/2022</span>
+        <div class="btns">
+          <button class="btn like">
+            <span>12</span>
+            <div>
+              <Icon icon="fa-solid fa-thumbs-up" />
+            </div>
+          </button>
+          <button class="btn dislike">
+            <span>12</span>
+            <div>
+              <Icon icon="fa-solid fa-thumbs-down" />
+            </div>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -70,9 +72,15 @@ const { link } = defineProps({
 
   .column-avatar {
     @apply w-12 flex justify-center;
+    @media (min-width: 1024px) {
+      @apply w-20;
+    }
 
     img {
       @apply w-12 h-12 object-contain rounded-full;
+      @media (min-width: 1024px) {
+        @apply w-16 h-16;
+      }
     }
   }
   .column-content {
@@ -84,14 +92,12 @@ const { link } = defineProps({
       .owner {
         @apply text-stone-300 font-semibold leading-3;
       }
-      .created {
-        @apply font-bold leading-3 text-xs text-stone-600 tracking-wider font-mono;
-      }
     }
 
     .text {
-      @apply text-sm text-stone-200 leading-5 font-extralight;
+      @apply text-lg text-stone-200 leading-5 font-extralight;
     }
+
     a.text {
       @apply text-stone-400 duration-150;
       &:hover {
@@ -100,8 +106,15 @@ const { link } = defineProps({
     }
 
     .footer {
-      @apply flex gap-2;
+      @apply flex items-end justify-between;
 
+      .created {
+        @apply font-bold leading-3 text-xs text-stone-600 tracking-wider font-mono;
+      }
+
+      .btns {
+        @apply flex gap-2;
+      }
       .btn {
         @apply text-sm text-stone-400 flex items-start gap-2 px-1 border-stone-700 border;
 
