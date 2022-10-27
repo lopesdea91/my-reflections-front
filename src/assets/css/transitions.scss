@@ -1,0 +1,19 @@
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: all 0.35s ease;
+}
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+.title-section-enter-active,
+.title-section-leave-active {
+  transition: all 0.2s ease;
+}
+.title-section-enter-from {
+  @apply -ml-3;
+}
+.title-section-leave-to {
+  opacity: 0;
+}

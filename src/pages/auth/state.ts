@@ -8,4 +8,4 @@ const state = readonly(_state)
 
 const actions = {}
 
-export { state, actions }
+export default { state, actions }

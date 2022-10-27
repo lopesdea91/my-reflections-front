@@ -19,4 +19,4 @@ const actions = {
     }
 }
 
-export { state, actions }
+export default { state, actions }

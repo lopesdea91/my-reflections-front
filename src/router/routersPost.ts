@@ -4,7 +4,7 @@ import Post from '@/pages/post/Post.vue'
 const routes: RouteRecordRaw[] = [
     {
         path: '/post/:id',
-        name: 'postId',
+        name: 'PostId',
         component: Post
     }
 ]

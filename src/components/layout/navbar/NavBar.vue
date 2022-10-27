@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import NavBarBrand from "./NavBarBrand.vue";
-import NavBarProfile from "./NavBarProfile.vue";
-import NavBarMenu from "./NavBarMenu.vue";
-import { state, actions } from "./state";
+import navbarState from "./state";
+import { useStoreSystem } from "../../../store/useStoreSystem";
+
+const { logged } = useStoreSystem();
 </script>
 
 <template>
   <div
-    class="navbar"
+    class="app-navbar"
     :class="{
-      active: state.statusMenu,
+      active: navbarState.state.statusMenu,
     }"
   >
-    <NavBarBrand />
-    <NavBarProfile />
-    <NavBarMenu />
+    <slot />
   </div>
 </template>

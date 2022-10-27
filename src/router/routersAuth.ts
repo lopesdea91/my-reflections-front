@@ -1,11 +1,11 @@
 import { RouteRecordRaw } from "vue-router";
-import SignIn from '@/pages/_auth/signin/SignIn.vue'
+import Auth from '@/pages/auth/Auth.vue'
 
 const routes: RouteRecordRaw[] = [
     {
-        path: '/signin',
-        name: 'signin',
-        component: SignIn
+        path: '/auth',
+        name: 'Auth',
+        component: Auth
     }
 ]
 

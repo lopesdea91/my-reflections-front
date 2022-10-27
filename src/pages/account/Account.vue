@@ -3,7 +3,7 @@ import { onBeforeMount, onBeforeUnmount } from "vue";
 import { actions as headerActions } from "@/components/layout/header/state";
 
 onBeforeMount(() => {
-  headerActions.setTitle("Perfil");
+  headerActions.setTitle("Conta");
 });
 onBeforeUnmount(() => {
   headerActions.reset();
@@ -12,6 +12,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="app-content">
-    <h1>Profile</h1>
+    <h1>Conta</h1>
   </div>
 </template>

@@ -1,32 +1,49 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from "vue";
-import { actions } from "./state";
-
-const debounce = ref();
-
-function handleResize(e: any) {
-  clearTimeout(debounce.value);
-  debounce.value = setTimeout(() => {
-    actions.setStatusMenu(false);
-  }, 50);
-}
-
-onMounted(() => {
-  window.addEventListener("resize", handleResize);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("resize", handleResize);
-});
+import { useRouter } from "vue-router";
+const { push } = useRouter();
 </script>
 
 <template>
-  <div class="navbar-brand">
-    <div class="icon">
+  <div class="app-navbar-brand">
+    <div class="icon icon-base" @click="() => push({ name: 'Feed' })">
       <Icon icon="fa-brands fa-twitter" />
     </div>
-    <button class="close" @click="actions.toggleStatusMenu">
+    <!-- <button class="close" @click="actions.toggleStatusMenu">
       <Icon icon="fa-solids fa-xmark" />
-    </button>
+    </button> -->
   </div>
 </template>
+
+<style lang="scss" scoped>
+.app-navbar-brand {
+  @apply h-12 flex items-center;
+
+  @media (max-width: 479px) {
+    @apply w-[90%] mx-auto opacity-0;
+  }
+
+  @media (min-width: 480px) {
+    @apply w-[75%] justify-center border-stone-700 border-b;
+  }
+  
+  @media (min-width: 1024px) {
+    @apply w-full;
+  }
+
+  .icon {
+    @apply cursor-pointer;
+
+    @media (min-width: 1024px) {
+      @apply ml-2;
+    }
+  }
+
+  .close {
+    @apply cursor-pointer w-10 border-stone-700 border;
+
+    @media (min-width: 480px) {
+      @apply hidden;
+    }
+  }
+}
+</style>

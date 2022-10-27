@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import NavBar from "@/components/layout/navbar/NavBar.vue";
+import NavBar from "@/components/layout/navbar/index.vue";
+import Header from "@/components/layout/header/index.vue";
 </script>
 
 <template>
   <NavBar />
+  <Header />
   <RouterView />
 </template>
 
 <style scoped>
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -18,5 +20,5 @@ import NavBar from "@/components/layout/navbar/NavBar.vue";
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
-}
+} */
 </style>

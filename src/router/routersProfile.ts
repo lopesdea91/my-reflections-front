@@ -3,8 +3,8 @@ import Profile from '@/pages/profile/Profile.vue'
 
 const routes: RouteRecordRaw[] = [
     {
-        path: '/profile',
-        name: 'profile',
+        path: '/profile/:id',
+        name: 'ProfileId',
         component: Profile
     }
 ]

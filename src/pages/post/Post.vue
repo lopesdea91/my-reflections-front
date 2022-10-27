@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import ContentHeader from "../../components/layout/content/contentHeader.vue";
-import Loading from "../../components/layout/content/Loading.vue";
-import Post from "../../components/Post.vue";
+import { onBeforeMount, onBeforeUnmount } from "vue";
+import { actions as headerActions } from "@/components/layout/header/state";
+import Post from "../../components/Post/index.vue";
+
+onBeforeMount(() => {
+  headerActions.setTitle("Postagem");
+  headerActions.useBtnBack();
+});
+onBeforeUnmount(() => {
+  headerActions.reset();
+});
 </script>
 
 <template>
-  <div class="page-content">
-    <Loading />
-    <ContentHeader btnBack title="Post" />
-
+  <div class="app-content">
     <Post />
   </div>
 </template>

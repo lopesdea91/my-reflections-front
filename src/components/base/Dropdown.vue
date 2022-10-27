@@ -1,3 +1,19 @@
+<template>
+  <div class="dropdown">
+    <button class="icon-base" @click="handler">
+      <Icon icon="fa-solid fa-ellipsis" />
+    </button>
+    <ul
+      ref="list"
+      :class="{
+        hidden: !status,
+      }"
+    >
+      <slot />
+    </ul>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from "vue";
 const status = ref<boolean>(false);
@@ -31,22 +47,6 @@ function handler() {
   }
 }
 </script>
-
-<template>
-  <div class="dropdown">
-    <button class="icon-base" @click="handler">
-      <Icon icon="fa-solid fa-ellipsis" />
-    </button>
-    <ul
-      ref="list"
-      :class="{
-        hidden: !status,
-      }"
-    >
-      <slot />
-    </ul>
-  </div>
-</template>
 
 <style lang="scss">
 .dropdown {
