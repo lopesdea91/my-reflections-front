@@ -16,8 +16,6 @@ import NavBarMenu from "./NavBarMenu.vue";
 <style lang="scss" scoped>
 .app-navbar {
   @apply flex flex-col overflow-hidden text-stone-200 z-20;
-  grid-column: 1;
-  grid-row: 1/3;
 
   @media (max-width: 479px) {
     @apply absolute w-full h-full right-full bg-stone-900 duration-200;
@@ -29,6 +27,8 @@ import NavBarMenu from "./NavBarMenu.vue";
 
   @media (min-width: 480px) {
     @apply flex flex-col items-center justify-self-end w-12;
+    grid-column: 1;
+    grid-row: 1/3;
   }
 
   @media (min-width: 1024px) {

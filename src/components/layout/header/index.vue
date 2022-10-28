@@ -74,13 +74,13 @@ const hasActions = computed(
 
 .app-content-header {
   @apply z-20 w-full h-12 flex items-center rounded shadow-sm bg-gradient-to-r from-stone-800 to-stone-900 border-stone-700 border-x;
-  grid-column: 2;
 
   @media (max-width: 479px) {
     @apply pl-1;
   }
   @media (min-width: 480px) {
     @apply border-stone-700 border-b;
+    grid-column: 2;
   }
 
   &-divisor {
