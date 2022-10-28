@@ -73,19 +73,18 @@ const hasActions = computed(
 }
 
 .app-content-header {
-  @apply z-20 w-full h-12 flex items-center absolute top-0 rounded shadow-sm bg-gradient-to-r from-stone-800 to-stone-900;
-  max-width: calc(600px - 2px);
-  transform: translateX(calc(50vw - 50%));
+  @apply z-20 w-full h-12 flex items-center rounded shadow-sm bg-gradient-to-r from-stone-800 to-stone-900 border-stone-700 border-x;
+  grid-column: 2;
 
   @media (max-width: 479px) {
-    @apply w-[95%] px-2;
+    @apply pl-1;
   }
   @media (min-width: 480px) {
     @apply border-stone-700 border-b;
   }
 
   &-divisor {
-    @apply block h-6 border-stone-700 border-l ml-1 mr-2;
+    @apply block h-6 border-stone-700 border-l mx-1;
   }
 
   &-only-mobile {

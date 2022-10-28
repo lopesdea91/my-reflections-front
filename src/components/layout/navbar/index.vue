@@ -16,6 +16,8 @@ import NavBarMenu from "./NavBarMenu.vue";
 <style lang="scss" scoped>
 .app-navbar {
   @apply flex flex-col overflow-hidden text-stone-200 z-20;
+  grid-column: 1;
+  grid-row: 1/3;
 
   @media (max-width: 479px) {
     @apply absolute w-full h-full right-full bg-stone-900 duration-200;
